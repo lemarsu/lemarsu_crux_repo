@@ -1,8 +1,8 @@
-# Description: Monitor tool with graphs
+# Description: Munin the monitoring tool surveys all your computers
 # URL: http://munin.projects.linpro.no/
 # Maintainer: LeMarsu <ch dot ruelle ta lemarsu dot com>
 # Packager: LeMarsu <ch dot ruelle ta lemarsu dot com>
-# Depends on: rddtools
+# Depends on: rrdtool, perl
 
 name=munin
 version=1.2.5
