@@ -1,0 +1,18 @@
+# Description: Monitor tool with graphs
+# URL: http://munin.projects.linpro.no/
+# Maintainer: LeMarsu <ch dot ruelle ta lemarsu dot com>
+# Packager: LeMarsu <ch dot ruelle ta lemarsu dot com>
+# Depends on: rddtools
+
+name=munin
+version=1.2.5
+release=1
+source=(http://downloads.sourceforge.net/$name/${name}_$version.tar.gz munin.patch)
+
+build() {
+        cd $name-$version
+        patch -p1 < ../munin.patch
+        make
+        make install DESTDIR=$PKG
+	rm -rf $PKG/usr/doc
+}
