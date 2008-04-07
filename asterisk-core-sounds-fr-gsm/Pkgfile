@@ -1,0 +1,15 @@
+# Description:
+# URL:
+# Maintainer:
+# Packager:
+# Depends on: asterisk
+
+name=asterisk-core-sounds-fr-gsm
+version=1.4.4
+release=1
+source=(http://ftp.digium.com/pub/telephony/sounds/releases/$name-$version.tar.gz)
+
+build() {
+	mkdir -p $PKG/var/lib/asterisk/sounds/fr 
+	cp -r * $PKG/var/lib/asterisk/sounds/fr 
+}

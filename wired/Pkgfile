@@ -1,0 +1,22 @@
+# Description: Simple terminal game
+# URL: http://www.zankasoftware.com/wired/
+# Maintainer: LeMarsu
+# Packager: ch.ruelle@lemarsu.com
+# Depends on: openssl
+
+name=wired
+version=1.3.1
+release=3
+source=(http://www.zankasoftware.com/dist/$name-latest.tar.gz wired-patch.diff wired)
+
+build() {
+	cd $name-$version
+	patch -p1 < ../wired-patch.diff
+	./configure --prefix=/usr --with-user=wired --with-group=wired
+	make
+	mkdir -p $PKG/usr/man/man{1,5,8}
+	make destdir=$PKG install
+	rm -rf $PKG/usr/info
+	mkdir -p $PKG/etc/rc.d
+	install -D -m 755 ../wired $PKG/etc/rc.d/wired
+}

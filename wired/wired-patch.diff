@@ -1,0 +1,96 @@
+diff -ur wired-1.3.1/Makefile.in wired-1.3.1-patched/Makefile.in
+--- wired-1.3.1/Makefile.in	2007-12-03 16:11:13.000000000 +0100
++++ wired-1.3.1-patched/Makefile.in	2007-12-03 16:17:57.000000000 +0100
+@@ -114,46 +114,46 @@
+ 		touch .update; \
+ 	fi
+ 
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/etc/
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/tmp/
++	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/
++	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/etc/
++	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/tmp/
+ 
+-	if [ ! -d $(installdir)/files ]; then \
+-		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/files/; \
+-		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/files/Uploads/; \
+-		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/files/Uploads/.wired/; \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/files/Uploads/.wired/type $(installdir)/files/Uploads/.wired/; \
+-		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/files/Drop\ Box/; \
+-		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(installdir)/files/Drop\ Box/.wired/; \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/files/Drop\ Box/.wired/type $(installdir)/files/Drop\ Box/.wired/; \
++	if [ ! -d $(destdir)$(installdir)/files ]; then \
++		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/files/; \
++		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/files/Uploads/; \
++		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/files/Uploads/.wired/; \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/files/Uploads/.wired/type $(destdir)$(installdir)/files/Uploads/.wired/; \
++		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/files/Drop\ Box/; \
++		$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) -d $(destdir)$(installdir)/files/Drop\ Box/.wired/; \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/files/Drop\ Box/.wired/type $(destdir)$(installdir)/files/Drop\ Box/.wired/; \
+ 	fi
+ 
+-	if [ ! -f $(installdir)/banlist ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/banlist $(installdir)/; \
++	if [ ! -f $(destdir)$(installdir)/banlist ]; then \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/banlist $(destdir)$(installdir)/; \
+ 	fi
+ 
+-	if [ ! -f $(installdir)/groups ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/groups $(installdir)/; \
++	if [ ! -f $(destdir)$(installdir)/groups ]; then \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/groups $(destdir)$(installdir)/; \
+ 	fi
+ 
+-	if [ ! -f $(installdir)/news ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/news $(installdir)/; \
++	if [ ! -f $(destdir)$(installdir)/news ]; then \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/news $(destdir)$(installdir)/; \
+ 	fi
+ 
+-	if [ ! -f $(installdir)/users ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/users $(installdir)/; \
++	if [ ! -f $(destdir)$(installdir)/users ]; then \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/users $(destdir)$(installdir)/; \
+ 	fi
+ 
+-	if [ ! -f $(installdir)/etc/wired.conf ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/etc/wired.conf $(installdir)/etc/; \
++	if [ ! -f $(destdir)$(installdir)/etc/wired.conf ]; then \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/etc/wired.conf $(destdir)$(installdir)/etc/; \
+ 	fi
+ 
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/hl2wired $(installdir)/
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/wired $(installdir)/
+-	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/wiredctl $(installdir)/
++	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/hl2wired $(destdir)$(installdir)/
++	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/wired $(destdir)$(installdir)/
++	$(INSTALL) -m 755 -o $(WD_USER) -g $(WD_GROUP) $(rundir)/wiredctl $(destdir)$(installdir)/
+ 
+ 	if [ -f /etc/resolv.conf ]; then \
+-		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) /etc/resolv.conf $(installdir)/etc/; \
++		$(INSTALL) -m 644 -o $(WD_USER) -g $(WD_GROUP) /etc/resolv.conf $(destdir)$(installdir)/etc/; \
+ 	fi
+ 
+ 	@if [ -f .update ]; then \
+@@ -179,13 +179,13 @@
+ 	@rm -f .update
+ 
+ install-man:
+-	$(INSTALL) -m 755 -d $(mandir)/man1/
+-	$(INSTALL) -m 644 $(top_srcdir)/man/hl2wired.1 $(mandir)/man1/
+-	$(INSTALL) -m 644 $(top_srcdir)/man/wiredctl.1 $(mandir)/man1/
+-	$(INSTALL) -m 755 -d $(mandir)/man5/
+-	$(INSTALL) -m 644 $(top_srcdir)/man/wired.conf.5 $(mandir)/man5/
+-	$(INSTALL) -m 755 -d $(mandir)/man8/
+-	$(INSTALL) -m 644 $(top_srcdir)/man/wired.8 $(mandir)/man8/
++	$(INSTALL) -m 755 -d $(destdir)$(mandir)/man1/
++	$(INSTALL) -m 644 $(top_srcdir)/man/hl2wired.1 $(destdir)$(mandir)/man1/
++	$(INSTALL) -m 644 $(top_srcdir)/man/wiredctl.1 $(destdir)$(mandir)/man1/
++	$(INSTALL) -m 755 -d $(destdir)$(mandir)/man5/
++	$(INSTALL) -m 644 $(top_srcdir)/man/wired.conf.5 $(destdir)$(mandir)/man5/
++	$(INSTALL) -m 755 -d $(destdir)$(mandir)/man8/
++	$(INSTALL) -m 644 $(top_srcdir)/man/wired.8 $(destdir)$(mandir)/man8/
+ 
+ dist:
+ 	rm -rf wired-$(WD_VERSION)

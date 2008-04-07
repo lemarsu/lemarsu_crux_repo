@@ -1,0 +1,31 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/wired
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/man/
+drwxr-xr-x	root/root	usr/man/man1/
+-rw-r--r--	root/root	usr/man/man1/hl2wired.1.gz
+-rw-r--r--	root/root	usr/man/man1/wiredctl.1.gz
+drwxr-xr-x	root/root	usr/man/man5/
+-rw-r--r--	root/root	usr/man/man5/wired.conf.5.gz
+drwxr-xr-x	root/root	usr/man/man8/
+-rw-r--r--	root/root	usr/man/man8/wired.8.gz
+drwxr-xr-x	wired/wired	usr/wired/
+-rw-r--r--	wired/wired	usr/wired/banlist
+drwxr-xr-x	wired/wired	usr/wired/etc/
+-rw-r--r--	wired/wired	usr/wired/etc/resolv.conf
+-rw-r--r--	wired/wired	usr/wired/etc/wired.conf
+drwxr-xr-x	wired/wired	usr/wired/files/
+drwxr-xr-x	wired/wired	usr/wired/files/Drop Box/
+drwxr-xr-x	wired/wired	usr/wired/files/Drop Box/.wired/
+-rw-r--r--	wired/wired	usr/wired/files/Drop Box/.wired/type
+drwxr-xr-x	wired/wired	usr/wired/files/Uploads/
+drwxr-xr-x	wired/wired	usr/wired/files/Uploads/.wired/
+-rw-r--r--	wired/wired	usr/wired/files/Uploads/.wired/type
+-rw-r--r--	wired/wired	usr/wired/groups
+-rwxr-xr-x	wired/wired	usr/wired/hl2wired
+-rw-r--r--	wired/wired	usr/wired/news (EMPTY)
+drwxr-xr-x	wired/wired	usr/wired/tmp/
+-rw-r--r--	wired/wired	usr/wired/users
+-rwxr-xr-x	wired/wired	usr/wired/wired
+-rwxr-xr-x	wired/wired	usr/wired/wiredctl

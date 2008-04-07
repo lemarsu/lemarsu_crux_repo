@@ -1,0 +1,13 @@
+README for wired
+
+REQUIREMENTS
+
+PRE-INSTALL
+
+POST-INSTALL
+
+    You must create a user and group for wired :
+
+   # groupadd wired
+   # useradd -g wired -d /usr/wired wired
+

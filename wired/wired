@@ -1,0 +1,23 @@
+#!/bin/bash
+# description: wired a file protocol
+
+wiredctl=/usr/wired/wiredctl
+
+case "$1" in
+  start)
+	$wiredctl start
+	;;
+  stop)
+	$wiredctl stop
+	;;
+  reload)
+	$wiredctl reload
+	;;
+  restart)
+	$wiredctl restart
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|reload|restart}"
+	exit 1
+esac
+
