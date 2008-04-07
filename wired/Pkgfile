@@ -1,7 +1,7 @@
 # Description: Simple terminal game
 # URL: http://www.zankasoftware.com/wired/
 # Maintainer: LeMarsu
-# Packager: ch.ruelle@lemarsu.com
+# Packager: ch dot ruelle at lemarsu dot com
 # Depends on: openssl
 
 name=wired
