@@ -1,0 +1,49 @@
+# Description: Go Ahead Send Me Viagra
+# URL:
+# Maintainer: LeMarsu
+# Packager: LeMarsu
+# Depends on:
+
+name=dspam
+version=3.8.0
+release=3
+source=(http://dspam.nuclearelephant.com/sources/${name}-${version}.tar.gz dspam)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr \
+                    --localstatedir=/var \
+                    --sysconfdir=/etc \
+                    --enable-daemon \
+                    --enable-domain-scale \
+                    --with-storage-driver=mysql_drv,hash_drv \
+                    --enable-preferences-extension \
+                    --with-mysql-includes=/usr/include/mysql \
+                    --with-mysql-libraries=/usr/lib \
+                    --enable-clamav \
+                    --enable-syslog
+	make
+	make DESTDIR=$PKG install
+	mv $PKG/usr/var $PKG/var
+	
+	# rc.d script
+	install -d $PKG/etc/rc.d
+	install -m 755 $SRC/dspam $PKG/etc/rc.d/
+
+	# mysql scripts
+	install -d $PKG/usr/share/dspam/tools.mysql_drv
+	cp src/tools.mysql_drv/*.sql $PKG/usr/share/dspam/tools.mysql_drv
+	chmod 750 $PKG/usr/share/dspam
+
+	# webui
+	install -d $PKG/var/www/dspam
+	cp -r webui/* $PKG/var/www/dspam
+	rm $PKG/var/www/dspam/**/{Makefile*,*.{in,am}}
+	chown -R dspam:dspam $PKG/var/www/dspam
+	chmod 444 $PKG/var/www/dspam/cgi-bin/*.*
+	chmod 554 $PKG/var/www/dspam/cgi-bin/*.cgi
+	chmod 555 $PKG/var/www/dspam/htdocs/templates
+	chmod 444 $PKG/var/www/dspam/htdocs/templates/*
+}
+
+# vim: ai

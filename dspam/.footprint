@@ -1,0 +1,85 @@
+drwxr-xr-x	root/root	etc/
+-rw-r-----	root/mail	etc/dspam.conf
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/dspam
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/cssclean
+-rwxr-xr-x	root/root	usr/bin/csscompress
+-rwxr-xr-x	root/root	usr/bin/cssconvert
+-rwxr-xr-x	root/root	usr/bin/cssstat
+-r-x--s---	root/mail	usr/bin/dspam
+-rwxr-xr-x	root/root	usr/bin/dspam_2sql
+-rwxr-xr-x	root/root	usr/bin/dspam_admin
+-rwxr-xr-x	root/root	usr/bin/dspam_clean
+-rwxr-xr-x	root/root	usr/bin/dspam_crc
+-rwxr-xr-x	root/root	usr/bin/dspam_dump
+-rwxr-xr-x	root/root	usr/bin/dspam_logrotate
+-rwxr-xr-x	root/root	usr/bin/dspam_merge
+-rwxr-xr-x	root/root	usr/bin/dspam_stats
+-rwxr-xr-x	root/root	usr/bin/dspam_train
+-rwxr-xr-x	root/root	usr/bin/dspamc
+drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/dspam/
+-rw-r--r--	root/root	usr/include/dspam/buffer.h
+-rw-r--r--	root/root	usr/include/dspam/config.h
+-rw-r--r--	root/root	usr/include/dspam/config_shared.h
+-rw-r--r--	root/root	usr/include/dspam/decode.h
+-rw-r--r--	root/root	usr/include/dspam/diction.h
+-rw-r--r--	root/root	usr/include/dspam/error.h
+-rw-r--r--	root/root	usr/include/dspam/heap.h
+-rw-r--r--	root/root	usr/include/dspam/ldap_client.h
+-rw-r--r--	root/root	usr/include/dspam/libdspam.h
+-rw-r--r--	root/root	usr/include/dspam/libdspam_objects.h
+-rw-r--r--	root/root	usr/include/dspam/nodetree.h
+-rw-r--r--	root/root	usr/include/dspam/storage_driver.h
+-rw-r--r--	root/root	usr/include/dspam/tokenizer.h
+drwxr-xr-x	root/root	usr/lib/
+-rw-r--r--	root/root	usr/lib/libdspam.a
+-rwxr-xr-x	root/root	usr/lib/libdspam.la
+lrwxrwxrwx	root/root	usr/lib/libdspam.so -> libdspam.so.7.0.0
+lrwxrwxrwx	root/root	usr/lib/libdspam.so.7 -> libdspam.so.7.0.0
+-rwxr-xr-x	root/root	usr/lib/libdspam.so.7.0.0
+-rw-r--r--	root/root	usr/lib/libhash_drv.a
+-rwxr-xr-x	root/root	usr/lib/libhash_drv.la
+lrwxrwxrwx	root/root	usr/lib/libhash_drv.so -> libhash_drv.so.7.0.0
+lrwxrwxrwx	root/root	usr/lib/libhash_drv.so.7 -> libhash_drv.so.7.0.0
+-rwxr-xr-x	root/root	usr/lib/libhash_drv.so.7.0.0
+-rw-r--r--	root/root	usr/lib/libmysql_drv.a
+-rwxr-xr-x	root/root	usr/lib/libmysql_drv.la
+lrwxrwxrwx	root/root	usr/lib/libmysql_drv.so -> libmysql_drv.so.7.0.0
+lrwxrwxrwx	root/root	usr/lib/libmysql_drv.so.7 -> libmysql_drv.so.7.0.0
+-rwxr-xr-x	root/root	usr/lib/libmysql_drv.so.7.0.0
+drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/dspam.pc
+drwxr-xr-x	root/root	usr/man/
+drwxr-xr-x	root/root	usr/man/man1/
+-rw-r--r--	root/root	usr/man/man1/dspam.1.gz
+-rw-r--r--	root/root	usr/man/man1/dspam_clean.1.gz
+-rw-r--r--	root/root	usr/man/man1/dspam_dump.1.gz
+-rw-r--r--	root/root	usr/man/man1/dspam_merge.1.gz
+-rw-r--r--	root/root	usr/man/man1/dspam_stats.1.gz
+-rw-r--r--	root/root	usr/man/man1/dspam_train.1.gz
+drwxr-xr-x	root/root	usr/man/man3/
+lrwxrwxrwx	root/root	usr/man/man3/dspam_addattribute.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_attach.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_create.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_destroy.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_detach.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_getsource.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_init.3.gz -> libdspam.3.gz
+lrwxrwxrwx	root/root	usr/man/man3/dspam_process.3.gz -> libdspam.3.gz
+-rw-r--r--	root/root	usr/man/man3/libdspam.3.gz
+drwxr-xr-x	root/root	usr/share/
+drwxr-x---	root/root	usr/share/dspam/
+drwxr-xr-x	root/root	usr/share/dspam/tools.mysql_drv/
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/mysql_objects-4.1.sql
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/mysql_objects-space.sql
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/mysql_objects-speed.sql
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/purge-4.1.sql
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/purge.sql
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/virtual_user_aliases.sql
+-rw-r--r--	root/root	usr/share/dspam/tools.mysql_drv/virtual_users.sql
+drwxr-xr-x	root/root	var/
+drwxrwx---	root/mail	var/dspam/
+drwxrwx---	root/mail	var/dspam/log/

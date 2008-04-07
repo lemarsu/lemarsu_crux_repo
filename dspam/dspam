@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/dspam: start/stop dspam daemon
+#
+
+case $1 in
+  start)
+    dspam --daemon &
+    ;;
+  stop)
+    pkill dspam
+    ;;
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 [start|stop|restart]"
+    ;;
+esac
+
+# End of file
