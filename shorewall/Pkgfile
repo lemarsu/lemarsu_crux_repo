@@ -1,0 +1,25 @@
+# Description: Iptables made easy
+# URL: http://www.shorewall.net/
+# Maintainer: LeMarsu <ch dot ruelle at lemarsu dot com>
+# Packager: LeMarsu <ch dot ruelle at lemarsu dot com>
+# Depends on: iptables
+
+name=shorewall
+version=4.0.10
+release=1
+source=(http://www1.shorewall.net/pub/$name/4.0/$name-$version/$name-{common,perl}-$version.tar.bz2)
+
+build() {
+	
+	PREFIX=$PKG
+	DEST=/etc/rc.d
+	export PREFIX DEST
+
+	cd $name-common-$version
+	./install.sh
+
+	cd ../$name-perl-$version
+	./install.sh
+
+	mv $PKG/usr/share/man $PKG/usr/man
+}
