@@ -1,0 +1,17 @@
+# Description: A program to fetch mail and deliver it
+# URL: http://fdm.sourceforge.net/
+# Maintainer: LeMarsu ch dot ruelle at lemarsu dot com
+# Depends on: tdb
+
+name=fdm
+version=1.5
+release=1
+source=(http://dl.sourceforge.net/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+        make DB=1
+        export PREFIX=/usr
+        export DESTDIR=$PKG
+        make install
+}
