@@ -1,0 +1,20 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/rc.d/
+-rwxr-xr-x	root/root	etc/rc.d/initdscript
+drwxr-xr-x	root/root	etc/switchpipe/
+drwxr-xr-x	root/root	etc/switchpipe/apps/
+-rw-r--r--	root/root	etc/switchpipe/apps/README
+-rw-r--r--	root/root	etc/switchpipe/config.yml
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/switchpipe/
+-rw-r--r--	root/root	usr/switchpipe/README
+lrwxrwxrwx	root/root	usr/switchpipe/apps -> /etc/switchpipe/apps
+lrwxrwxrwx	root/root	usr/switchpipe/config.yml -> /etc/switchpipe/config.yml
+drwxr-xr-x	root/root	usr/switchpipe/lib/
+-rw-r--r--	root/root	usr/switchpipe/lib/switchpipe.rb
+drwxr-xr-x	root/root	usr/switchpipe/log/
+drwxr-xr-x	root/root	usr/switchpipe/script/
+-rw-r--r--	root/root	usr/switchpipe/script/maintainer
+-rw-r--r--	root/root	usr/switchpipe/script/runas
+-rwxr-xr-x	root/root	usr/switchpipe/script/server
+-rwxr-xr-x	root/root	usr/switchpipe/script/switchpipe

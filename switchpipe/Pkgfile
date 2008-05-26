@@ -1,0 +1,29 @@
+# Description: Switchpipe
+# URL:
+# Maintainer: LeMarsu < ch dot ruelle at lemarsu dot com >
+# Packager: LeMarsu < ch dot ruelle at lemarsu dot com >
+# Depends on: ruby
+
+name=switchpipe
+version=1
+release=1
+source=(switchpipe.patch)
+svn_source
+
+build() {
+	svn export http://switchpipe.org/switchpipe1/trunk $name-$version
+	cd $name-$version
+	patch -p1 < $SRC/switchpipe.patch
+	mkdir -p $PKG/etc/rc.d
+	install -m 755 script/initdscript $PKG/etc/rc.d
+	mkdir -p $PKG/usr/switchpipe
+	cp -r *  $PKG/usr/switchpipe
+	rm -rf   $PKG/usr/switchpipe/demo_apps
+	rm       $PKG/usr/switchpipe/script/demo
+	rm       $PKG/usr/switchpipe/script/initdscript
+	mkdir    $PKG/etc/switchpipe
+	mv       $PKG/usr/switchpipe/config.yml.example $PKG/etc/switchpipe/config.yml
+	mv       $PKG/usr/switchpipe/apps $PKG/etc/switchpipe/apps
+	ln -s    /etc/switchpipe/config.yml $PKG/usr/switchpipe/config.yml
+	ln -s    /etc/switchpipe/apps $PKG/usr/switchpipe/apps
+}

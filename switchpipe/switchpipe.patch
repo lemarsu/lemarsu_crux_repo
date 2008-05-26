@@ -1,0 +1,56 @@
+diff -ur switchpipe/lib/switchpipe.rb switchpipe-crux/lib/switchpipe.rb
+--- switchpipe/lib/switchpipe.rb	2008-04-13 17:58:03.000000000 +0200
++++ switchpipe-crux/lib/switchpipe.rb	2008-05-26 02:30:39.000000000 +0200
+@@ -12,7 +12,7 @@
+   HOME_FOLDER       = File.join(Dir.pwd, File.dirname(__FILE__), '..')
+   CONFIG_FOLDER     = File.join(HOME_FOLDER, 'apps')
+   LOG_FOLDER        = File.join(HOME_FOLDER, 'log')
+-  ENVIRONMENT       = :development  # or :production
++  ENVIRONMENT       = :production
+   VERSION           = "1.05"
+   LOG               = Logger.new(File.join(LOG_FOLDER, ENVIRONMENT.to_s + '.log'), 'daily')
+   LOG.sev_threshold = ENVIRONMENT == :development ? Logger::DEBUG : Logger::INFO
+@@ -728,4 +728,4 @@
+       "#{@host}:#{@port}"
+     end
+   end
+-end
+\ No newline at end of file
++end
+diff -ur switchpipe/script/initdscript switchpipe-crux/script/initdscript
+--- switchpipe/script/initdscript	2008-04-20 20:19:08.000000000 +0200
++++ switchpipe-crux/script/initdscript	2008-05-26 02:30:06.000000000 +0200
+@@ -13,9 +13,9 @@
+ # KEYWORD: shutdown
+ #
+ 
+-SWITCHPIPE_PATH="/usr/local/switchpipe"
++SWITCHPIPE_PATH="/usr/switchpipe"
+ SWITCHPIPE_RUNNER="$SWITCHPIPE_PATH/script/switchpipe"
+-PATH=$PATH:/usr/local/bin:/opt/local/bin
++PATH=$PATH:/usr/local/bin
+ 
+ # Sanity checks.
+ [ -x $SWITCHPIPE_RUNNER ] || exit 0
+@@ -39,18 +39,12 @@
+     stop)
+         stop
+         ;;
+-    status)
+-        ;;
+     restart)
+         stop
+         start
+         ;;
+-    condrestart)
+-        ;;
+-    reload)
+-        ;;
+     *)
+-        echo $"Usage: $0 {start|stop|status|restart|condrestart|reload}"
++        echo $"Usage: $0 {start|stop|restart}"
+         ;;
+ esac
+-exit $RETVAL
+\ No newline at end of file
++exit $RETVAL
