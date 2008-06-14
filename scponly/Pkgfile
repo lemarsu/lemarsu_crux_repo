@@ -1,0 +1,17 @@
+# Description: scp and sftp but no login
+# URL: 
+# Maintainer:
+# Packager:
+# Depends on:
+
+name=scponly
+version=4.8
+release=1
+source=(http://mesh.dl.sourceforge.net/sourceforge/$name/$name-$version.tgz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --enable-scp-compat --enable-sftp-logging-compat --enable-winscp-compat
+	make
+	make DESTDIR=$PKG install
+}
