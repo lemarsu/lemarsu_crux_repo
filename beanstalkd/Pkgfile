@@ -7,11 +7,11 @@
 name=beanstalkd
 version=1.0
 release=1
-source=(http://xph.us/software/$name/rel/$name-$version.tar.gz)
+source=(http://xph.us/software/$name/rel/$name-$version.tar.gz beanstalkd)
 
 build() {
 	cd $name-$version
 	make
-	mkdir -p $PKG/usr/bin
-	cp beanstalkd $PKG/usr/bin
+	install -D -m 755 beanstalkd $PKG/usr/bin/beanstalkd
+	install -D -m 755 ../beanstalkd $PKG/etc/rc.d/beanstalkd
 }

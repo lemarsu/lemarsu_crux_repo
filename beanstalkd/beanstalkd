@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/rc.d/beanstalkd: start/stop beanstalkd daemon
+#
+
+case $1 in
+  start)
+    beanstalkd -d
+    ;;
+  stop)
+    pkill beanstalkd 
+    ;;
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 [start|stop|restart]"
+    ;;
+esac
+
+# End of file
