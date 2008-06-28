@@ -1,0 +1,17 @@
+# Description: beanstalkd is a fast, distributed, in-memory workqueue service
+# URL: http://xph.us/software/beanstalkd/
+# Maintainer: LeMarsu
+# Packager: ch dot ruelle at lemarsu dot com
+# Depends on: libevent
+
+name=beanstalkd
+version=1.0
+release=1
+source=(http://xph.us/software/$name/rel/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make
+	mkdir -p $PKG/usr/bin
+	cp beanstalkd $PKG/usr/bin
+}
