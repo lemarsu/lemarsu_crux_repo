@@ -185,6 +185,7 @@ lrwxrwxrwx	root/root	usr/share/shorewall/functions -> lib.base
 -rw-r--r--	root/root	usr/share/shorewall/macro.PostgreSQL
 -rw-r--r--	root/root	usr/share/shorewall/macro.Printer
 -rw-r--r--	root/root	usr/share/shorewall/macro.RDP
+-rw-r--r--	root/root	usr/share/shorewall/macro.RNDC
 -rw-r--r--	root/root	usr/share/shorewall/macro.Rdate
 -rw-r--r--	root/root	usr/share/shorewall/macro.Reject
 -rw-r--r--	root/root	usr/share/shorewall/macro.Rsync

@@ -5,7 +5,7 @@
 # Depends on: iptables
 
 name=shorewall
-version=4.0.10
+version=4.0.14
 release=1
 source=(http://www1.shorewall.net/pub/$name/4.0/$name-$version/$name-{common,perl}-$version.tar.bz2)
 
